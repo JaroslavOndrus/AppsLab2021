@@ -26,22 +26,12 @@ public class Main {
 
         int numbersAreEqual = 0;
 
-        if(firstNumber == secondNumber && firstNumber == thirdNumber){
+        if(firstNumber == secondNumber && secondNumber == thirdNumber){
             numbersAreEqual = 3;
         }
-        else if(firstNumber == secondNumber && firstNumber != thirdNumber){
+        else if(firstNumber == secondNumber || secondNumber == thirdNumber || firstNumber == thirdNumber){
             numbersAreEqual = 2;
         }
-        else if(firstNumber != secondNumber && firstNumber == thirdNumber){
-            numbersAreEqual = 2;
-        }
-        else if(firstNumber != secondNumber && secondNumber == thirdNumber){
-            numbersAreEqual = 2;
-        }
-        else if(firstNumber != secondNumber && secondNumber != thirdNumber){
-            numbersAreEqual = 0;
-        }
-
         return numbersAreEqual;
     }
 }
