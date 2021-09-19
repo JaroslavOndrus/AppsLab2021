@@ -10,28 +10,26 @@ public class Main {
 
         Scanner consoleIn = new Scanner(System.in);
 
-        System.out.println("Write First Number: ");
-        int firstNumber = consoleIn.nextInt();
+        System.out.println("Write First Site Of Triangle: ");
+        int site1 = consoleIn.nextInt();
 
-        System.out.println("Write Second Number: ");
-        int secondNumber = consoleIn.nextInt();
+        System.out.println("Write First Site Of Triangle: ");
+        int site2 = consoleIn.nextInt();
 
-        System.out.println("Write Third Number: ");
-        int thirdNumber = consoleIn.nextInt();
+        System.out.println("Write First Site Of Triangle: ");
+        int site3 = consoleIn.nextInt();
 
-        System.out.println(ReturnEqualValue(firstNumber, secondNumber, thirdNumber));
+        System.out.println(EqualOfTriangle(site1, site2, site3));
     }
 
-    public static int ReturnEqualValue(int firstNumber, int secondNumber, int thirdNumber){
-
-        int numbersAreEqual = 0;
-
-        if(firstNumber == secondNumber && secondNumber == thirdNumber){
-            numbersAreEqual = 3;
+    public static boolean EqualOfTriangle(int site1, int site2, int site3){
+        boolean equal = true;
+        if((site1*site1)+(site2*site2)==(site3*site3)) {
+            equal = true;
         }
-        else if(firstNumber == secondNumber || secondNumber == thirdNumber || firstNumber == thirdNumber){
-            numbersAreEqual = 2;
+        else{
+            equal = false;
         }
-        return numbersAreEqual;
+        return equal;
     }
 }
