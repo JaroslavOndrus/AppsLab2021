@@ -6,24 +6,38 @@ public class Main {
 
     public static void main(String[] args) {
 
+
+
         Scanner consoleIn = new Scanner(System.in);
 
-        System.out.println("Write height of step: ");
-        double heightOfStep = consoleIn.nextDouble();
+        System.out.println("Write First Number: ");
+        int firstNumber = consoleIn.nextInt();
 
-        System.out.println("Write length of one step: ");
-        double lengthOfStep = consoleIn.nextDouble();
+        System.out.println("Write Second Number: ");
+        int secondNumber = consoleIn.nextInt();
 
-        System.out.println("Write height of the tower: ");
-        double heightOfTower = consoleIn.nextDouble();
+        System.out.println("Write Third Number: ");
+        int thirdNumber = consoleIn.nextInt();
 
-        if(heightOfTower > 0 && heightOfStep > 0 && lengthOfStep > 0){
+        System.out.println(ReturnEqualValue(firstNumber, secondNumber, thirdNumber));
+    }
 
-            double totalDistance = ((heightOfTower/heightOfStep)*(heightOfStep+lengthOfStep));
-            System.out.println("Total Distance is: "+totalDistance);
+    public static int ReturnEqualValue(int firstNumber, int secondNumber, int thirdNumber){
+
+        int numbersAreEqual = 0;
+
+        if(firstNumber == secondNumber && firstNumber == thirdNumber){
+            numbersAreEqual = 3;
         }
-        else{
-            System.out.println("Your values were lower than 0, try again");
+        else if(firstNumber == secondNumber && firstNumber != thirdNumber){
+            numbersAreEqual = 2;
         }
+        else if(firstNumber != secondNumber && secondNumber == thirdNumber){
+            numbersAreEqual = 2;
+        }
+        else if(firstNumber != secondNumber && secondNumber != thirdNumber){
+            numbersAreEqual = 0;
+        }
+        return numbersAreEqual;
     }
 }
