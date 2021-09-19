@@ -32,12 +32,16 @@ public class Main {
         else if(firstNumber == secondNumber && firstNumber != thirdNumber){
             numbersAreEqual = 2;
         }
+        else if(firstNumber != secondNumber && firstNumber == thirdNumber){
+            numbersAreEqual = 2;
+        }
         else if(firstNumber != secondNumber && secondNumber == thirdNumber){
             numbersAreEqual = 2;
         }
         else if(firstNumber != secondNumber && secondNumber != thirdNumber){
             numbersAreEqual = 0;
         }
+
         return numbersAreEqual;
     }
 }
