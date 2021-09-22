@@ -6,30 +6,31 @@ public class Main {
 
     public static void main(String[] args) {
 
-
-
         Scanner consoleIn = new Scanner(System.in);
 
-        System.out.println("Write First Site Of Triangle: ");
-        int site1 = consoleIn.nextInt();
+        System.out.println("Write Number Of Slices: ");
+        int numberOfSlices = consoleIn.nextInt();
 
-        System.out.println("Write First Site Of Triangle: ");
-        int site2 = consoleIn.nextInt();
+        System.out.println("Write Number Of Recipients: ");
+        int numberOfRecipients = consoleIn.nextInt();
 
-        System.out.println("Write First Site Of Triangle: ");
-        int site3 = consoleIn.nextInt();
+        System.out.println("Write How Many Slices Each Person Gets: ");
+        int slicesEach = consoleIn.nextInt();
 
-        System.out.println(EqualOfTriangle(site1, site2, site3));
+        System.out.println(EqualPieSlices(numberOfSlices, numberOfRecipients, slicesEach));
     }
 
-    public static boolean EqualOfTriangle(int site1, int site2, int site3){
+    public static boolean EqualPieSlices(int numberOfSlices, int numberOfRecipients, int slicesEach){
+
         boolean equal = true;
-        if((site1*site1)+(site2*site2)==(site3*site3)) {
-            equal = true;
-        }
-        else{
+
+        if((numberOfRecipients*slicesEach) > numberOfSlices){
             equal = false;
         }
+        else if ((numberOfRecipients*slicesEach) < numberOfSlices){
+            equal = true;
+        }
+
         return equal;
     }
 }
