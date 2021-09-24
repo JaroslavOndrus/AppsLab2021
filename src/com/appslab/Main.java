@@ -6,29 +6,24 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //Scanner consoleIn = new Scanner(System.in);
-        int[] array = {12, 90, 75};
-        int even = 0;
-        int odd = 0;
+        Scanner consoleIn = new Scanner(System.in);
 
-        for(int i = 0; i < array.length; i++){
-            if(array[i] %2 == 0){
-                even += array[i];
-            }
-            else{
-                odd += array[i];
-            }
-        }
+        System.out.println("Write Your First Word To Compare: ");
+        String word1 = consoleIn.nextLine();
 
-        if(even > odd){
-            System.out.println("Even > Odd");
-            int a = even - odd;
-            System.out.println(a);
+        System.out.println("Write Your Second Word To Compare: ");
+        String word2 = consoleIn.nextLine();
+
+        System.out.println(CheckTheEndOfString(word1, word2));
+    }
+
+    public static boolean CheckTheEndOfString(String word1, String word2){
+
+        if(word1.endsWith(word2)){
+            return true;
         }
         else{
-            System.out.println("Odd > Even");
-            int b = odd - even;
-            System.out.println(b);
+            return false;
         }
     }
 }
