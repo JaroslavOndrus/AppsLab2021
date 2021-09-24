@@ -6,24 +6,29 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Scanner consoleIn = new Scanner(System.in);
-        System.out.println("Write Your Word to test, if it is a palindrome: ");
-        String yourWord = consoleIn.nextLine();
+        //Scanner consoleIn = new Scanner(System.in);
+        int[] array = {12, 90, 75};
+        int even = 0;
+        int odd = 0;
 
-        System.out.println(isPalindrome(yourWord));
-    }
-
-    public static boolean isPalindrome(String yourWord){
-        StringBuilder sb=new StringBuilder(yourWord);
-        sb.reverse();
-        String rev=sb.toString();
-
-        if(yourWord.equals(rev)){
-            return true;
+        for(int i = 0; i < array.length; i++){
+            if(array[i] %2 == 0){
+                even += array[i];
+            }
+            else{
+                odd += array[i];
+            }
         }
 
+        if(even > odd){
+            System.out.println("Even > Odd");
+            int a = even - odd;
+            System.out.println(a);
+        }
         else{
-            return false;
+            System.out.println("Odd > Even");
+            int b = odd - even;
+            System.out.println(b);
         }
     }
 }
