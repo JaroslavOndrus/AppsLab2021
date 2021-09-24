@@ -6,24 +6,23 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Scanner consoleIn = new Scanner(System.in);
+        //Scanner consoleIn = new Scanner(System.in);
 
-        System.out.println("Write Your First Word To Compare: ");
-        String word1 = consoleIn.nextLine();
+        String[] rok1 = {"A8","E8"};
+        String[] rok2= {"A1","B2"};
+        String[] rok3 = {"H4","H3"};
+        String[] rok4 = {"F5","C8"};
 
-        System.out.println("Write Your Second Word To Compare: ");
-        String word2 = consoleIn.nextLine();
+        System.out.print(TwoRooksAttack(rok1) +"\n");
+        System.out.print(TwoRooksAttack(rok2)+"\n");
+        System.out.print(TwoRooksAttack(rok3)+"\n");
+        System.out.print(TwoRooksAttack(rok4));
 
-        System.out.println(CheckTheEndOfString(word1, word2));
     }
-
-    public static boolean CheckTheEndOfString(String word1, String word2){
-
-        if(word1.endsWith(word2)){
-            return true;
-        }
-        else{
-            return false;
-        }
+    public static boolean TwoRooksAttack(String[] rok)
+    {
+        String rok1 = rok[0];
+        String rok2 = rok[1];
+        return rok1.charAt(0) == rok2.charAt(0) || rok1.charAt(1) == rok2.charAt(1);
     }
 }
